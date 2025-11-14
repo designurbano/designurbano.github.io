@@ -1,0 +1,1444 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DESIGN URBANO S.R.L. | Construcción Residencial en Buenos Aires</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: #c5cadd;
+    color: #111827;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+img {
+    max-width: 100%;
+    display: block;
+}
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 32px 20px 80px 20px;
+}
+.main-shell {
+    background: radial-gradient(circle at top left, #f7f7ff 0, #e6e9f7 40%, #dde2f4 70%, #d2d6ec 100%);
+    border-radius: 32px;
+    box-shadow: 0 40px 80px rgba(15, 23, 42, 0.25);
+    overflow: hidden;
+    position: relative;
+}
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 40px 8px 40px;
+}
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.logo-mark {
+    width: 32px;
+    height: 32px;
+    border-radius: 999px;
+    background: radial-gradient(circle at 20% 20%, #a855f7, #4f46e5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f9fafb;
+    font-weight: 700;
+    font-size: 18px;
+}
+.logo-text-main {
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+.logo-text-sub {
+    font-size: 11px;
+    opacity: 0.7;
+}
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    font-size: 14px;
+}
+.nav a {
+    position: relative;
+    padding-bottom: 4px;
+    opacity: 0.8;
+    transition: opacity 0.3s ease, color 0.3s ease;
+}
+.nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #6366f1, #a855f7);
+    transition: width 0.3s ease;
+}
+.nav a:hover {
+    opacity: 1;
+    color: #111827;
+}
+.nav a:hover::after {
+    width: 100%;
+}
+.header-cta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+.header-toggle {
+    display: flex;
+    align-items: center;
+    background: #111827;
+    border-radius: 999px;
+    padding: 4px;
+}
+.toggle-dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #818cf8, #a855f7);
+}
+.toggle-label {
+    font-size: 11px;
+    color: #e5e7eb;
+    padding: 0 10px 0 6px;
+}
+.btn {
+    border-radius: 999px;
+    padding: 10px 22px;
+    font-size: 13px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, color 0.25s ease;
+}
+.btn-primary {
+    background: linear-gradient(135deg, #6366f1, #a855f7);
+    color: #f9fafb;
+    box-shadow: 0 12px 25px rgba(79, 70, 229, 0.35);
+}
+.btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 20px 35px rgba(79, 70, 229, 0.45);
+}
+.btn-outline {
+    background: transparent;
+    border: 1px solid rgba(15, 23, 42, 0.12);
+    color: #111827;
+}
+.btn-outline:hover {
+    background: rgba(255, 255, 255, 0.6);
+}
+.hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    gap: 10px;
+    padding: 16px 40px 40px 40px;
+}
+.hero-left {
+    padding-right: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+.hero-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: #6b7280;
+}
+.hero-kicker-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #22c55e, #4ade80);
+}
+.hero-title {
+    font-size: 38px;
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+    color: #0f172a;
+}
+.hero-subtitle {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #4b5563;
+    max-width: 480px;
+}
+.hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    margin-top: 8px;
+}
+.hero-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+.hero-stat-number {
+    font-size: 22px;
+    font-weight: 600;
+}
+.hero-stat-label {
+    font-size: 11px;
+    opacity: 0.7;
+}
+.hero-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(15, 23, 42, 0.06);
+    border-radius: 999px;
+    padding: 6px 12px;
+    font-size: 11px;
+}
+.hero-chip-avatar {
+    width: 24px;
+    height: 24px;
+    border-radius: 999px;
+    background: url("https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=200&q=80") center/cover no-repeat;
+}
+.hero-chip-text-main {
+    font-weight: 500;
+}
+.hero-chip-text-sub {
+    opacity: 0.7;
+}
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 8px;
+}
+.hero-tagline {
+    font-size: 12px;
+    color: #6b7280;
+}
+.hero-right {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+.hero-building-card {
+    position: relative;
+    width: 100%;
+    max-width: 380px;
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 36px 70px rgba(15, 23, 42, 0.35);
+}
+.hero-building-photo {
+    background-image: url("https://images.unsplash.com/photo-1505843513577-22bb7d21e455?auto=format&fit=crop&w=1200&q=80");
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    padding-top: 145%;
+}
+.hero-building-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(15, 23, 42, 0.45), rgba(15, 23, 42, 0));
+}
+.hero-building-label {
+    position: absolute;
+    left: 18px;
+    bottom: 18px;
+    color: #f9fafb;
+    font-size: 11px;
+}
+.hero-building-label span {
+    display: block;
+}
+.hero-building-label-title {
+    font-weight: 600;
+    font-size: 13px;
+}
+.hero-floating-card {
+    position: absolute;
+    left: -14px;
+    bottom: 40px;
+    width: 170px;
+    border-radius: 22px;
+    background: #f9fafb;
+    box-shadow: 0 18px 35px rgba(15, 23, 42, 0.3);
+    padding: 12px 16px;
+    font-size: 11px;
+}
+.hero-floating-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+.hero-floating-name {
+    font-weight: 500;
+}
+.hero-floating-badge {
+    font-size: 9px;
+    padding: 2px 6px;
+    border-radius: 999px;
+    background: rgba(22, 163, 74, 0.1);
+    color: #15803d;
+}
+.hero-floating-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 6px;
+}
+.hero-floating-label {
+    opacity: 0.7;
+}
+.hero-floating-value {
+    font-weight: 600;
+}
+.hero-floating-gauge {
+    margin-top: 6px;
+}
+.hero-floating-gauge-track {
+    width: 100%;
+    height: 6px;
+    border-radius: 999px;
+    background: #e5e7eb;
+    overflow: hidden;
+}
+.hero-floating-gauge-fill {
+    width: 68%;
+    height: 100%;
+    background: linear-gradient(90deg, #4ade80, #22c55e);
+}
+.hero-floating-gauge-text {
+    margin-top: 4px;
+    display: flex;
+    justify-content: space-between;
+}
+.hero-tour-card {
+    position: absolute;
+    right: -10px;
+    top: 28px;
+    width: 160px;
+    border-radius: 18px;
+    background: rgba(15, 23, 42, 0.9);
+    color: #f9fafb;
+    padding: 10px 12px;
+    font-size: 11px;
+    backdrop-filter: blur(12px);
+}
+.hero-tour-user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.hero-tour-avatar {
+    width: 34px;
+    height: 34px;
+    border-radius: 999px;
+    background: url("https://images.unsplash.com/photo-1522252234503-e356532cafd5?auto=format&fit=crop&w=200&q=80") center/cover no-repeat;
+}
+.hero-tour-info span {
+    display: block;
+}
+.hero-tour-name {
+    font-weight: 500;
+}
+.hero-tour-role {
+    opacity: 0.7;
+}
+.hero-tour-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8px;
+}
+.hero-tour-icon-row {
+    display: flex;
+    gap: 6px;
+}
+.hero-tour-icon {
+    width: 22px;
+    height: 22px;
+    border-radius: 999px;
+    border: 1px solid rgba(148, 163, 184, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+}
+.hero-tour-cta {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    opacity: 0.85;
+}
+.section {
+    padding: 40px 40px 8px 40px;
+}
+.section-inner {
+    max-width: 980px;
+    margin: 0 auto;
+}
+.section-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 18px;
+}
+.section-kicker {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: #6b7280;
+}
+.section-title {
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    color: #0f172a;
+}
+.section-description {
+    font-size: 13px;
+    color: #6b7280;
+    max-width: 420px;
+}
+.section-body {
+    font-size: 14px;
+    color: #374151;
+}
+.about-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    gap: 30px;
+}
+.about-text {
+    line-height: 1.7;
+}
+.about-highlight {
+    margin-top: 18px;
+    display: flex;
+    gap: 20px;
+}
+.about-highlight-item {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 18px;
+    padding: 14px 16px;
+    font-size: 12px;
+    box-shadow: 0 16px 30px rgba(15, 23, 42, 0.1);
+}
+.about-highlight-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: #6b7280;
+    margin-bottom: 4px;
+}
+.about-highlight-value {
+    font-size: 18px;
+    font-weight: 600;
+}
+.about-diagram {
+    background: rgba(15, 23, 42, 0.85);
+    border-radius: 24px;
+    padding: 18px 18px 16px 18px;
+    color: #e5e7eb;
+    box-shadow: 0 28px 55px rgba(15, 23, 42, 0.6);
+}
+.diagram-title {
+    font-size: 13px;
+    margin-bottom: 4px;
+}
+.diagram-sub {
+    font-size: 11px;
+    opacity: 0.75;
+    margin-bottom: 16px;
+}
+.diagram-row {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.diagram-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 11px;
+}
+.diagram-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.diagram-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+}
+.diagram-dot-a {
+    background: #4ade80;
+}
+.diagram-dot-b {
+    background: #38bdf8;
+}
+.diagram-dot-c {
+    background: #a855f7;
+}
+.diagram-bar {
+    flex: 1;
+    height: 6px;
+    border-radius: 999px;
+    background: rgba(148, 163, 184, 0.4);
+    overflow: hidden;
+    margin: 0 12px;
+}
+.diagram-bar-fill-a {
+    width: 86%;
+    height: 100%;
+    background: linear-gradient(90deg, #4ade80, #22c55e);
+}
+.diagram-bar-fill-b {
+    width: 72%;
+    height: 100%;
+    background: linear-gradient(90deg, #38bdf8, #6366f1);
+}
+.diagram-bar-fill-c {
+    width: 64%;
+    height: 100%;
+    background: linear-gradient(90deg, #a855f7, #ec4899);
+}
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+.service-card {
+    background: rgba(255, 255, 255, 0.82);
+    border-radius: 22px;
+    padding: 18px 18px 20px 18px;
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.16);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 13px;
+}
+.service-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(79, 70, 229, 0.1);
+    font-size: 16px;
+}
+.service-title {
+    font-weight: 600;
+    font-size: 15px;
+}
+.service-text {
+    color: #4b5563;
+}
+.service-tag {
+    margin-top: 6px;
+    font-size: 11px;
+    color: #6366f1;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+}
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+.benefit-card {
+    background: rgba(15, 23, 42, 0.9);
+    color: #e5e7eb;
+    border-radius: 22px;
+    padding: 18px 18px 18px 18px;
+    box-shadow: 0 22px 45px rgba(15, 23, 42, 0.6);
+    font-size: 13px;
+}
+.benefit-title {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+.benefit-text {
+    opacity: 0.88;
+}
+.process-wrapper {
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 22px;
+    padding: 20px 20px 22px 20px;
+    box-shadow: 0 18px 36px rgba(15, 23, 42, 0.18);
+}
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    align-items: stretch;
+}
+.process-step {
+    position: relative;
+    padding: 8px 10px 0 0;
+}
+.process-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: rgba(15, 23, 42, 0.04);
+    font-size: 11px;
+    margin-bottom: 10px;
+}
+.process-number {
+    width: 18px;
+    height: 18px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #6366f1, #a855f7);
+    color: #f9fafb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+}
+.process-name {
+    font-weight: 500;
+}
+.process-title {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+.process-text {
+    font-size: 13px;
+    color: #4b5563;
+}
+.process-arrow {
+    position: absolute;
+    right: -18px;
+    top: 26px;
+    width: 36px;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(148, 163, 184, 0.3), rgba(15, 23, 42, 0.7));
+}
+.process-arrow::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: -4px;
+    border-width: 4px 0 4px 6px;
+    border-style: solid;
+    border-color: transparent transparent transparent rgba(15, 23, 42, 0.75);
+}
+.process-step:last-child .process-arrow {
+    display: none;
+}
+.contact-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 22px;
+    padding: 18px 20px;
+    border-radius: 22px;
+    background: linear-gradient(120deg, #111827, #1e293b);
+    color: #e5e7eb;
+    box-shadow: 0 24px 50px rgba(15, 23, 42, 0.8);
+}
+.contact-banner-main {
+    max-width: 520px;
+}
+.contact-banner-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+.contact-banner-text {
+    font-size: 13px;
+    opacity: 0.92;
+}
+.contact-banner-pills {
+    margin-top: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 11px;
+}
+.contact-pill {
+    padding: 5px 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(148, 163, 184, 0.5);
+}
+.contact-banner-side {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-end;
+}
+.contact-banner-note {
+    font-size: 11px;
+    opacity: 0.8;
+    max-width: 220px;
+    text-align: right;
+}
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 20px 40px 28px 40px;
+    font-size: 12px;
+    color: #6b7280;
+}
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+.footer-links span {
+    opacity: 0.85;
+}
+.footer strong {
+    font-weight: 600;
+    color: #111827;
+}
+.modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.4);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    z-index: 40;
+}
+.modal-backdrop.active {
+    display: flex;
+}
+.modal {
+    width: 100%;
+    max-width: 420px;
+    background: #f9fafb;
+    border-radius: 24px;
+    padding: 22px 22px 20px 22px;
+    box-shadow: 0 30px 80px rgba(15, 23, 42, 0.65);
+    position: relative;
+}
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 12px;
+}
+.modal-title {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: #0f172a;
+}
+.modal-subtitle {
+    font-size: 13px;
+    color: #4b5563;
+    margin-top: 4px;
+}
+.modal-close {
+    border: none;
+    background: rgba(15, 23, 42, 0.04);
+    border-radius: 999px;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 16px;
+}
+.modal-content {
+    font-size: 13px;
+    color: #374151;
+}
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 10px;
+}
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.form-label {
+    font-size: 12px;
+    font-weight: 500;
+    color: #111827;
+}
+.form-input {
+    border-radius: 12px;
+    border: 1px solid rgba(148, 163, 184, 0.7);
+    padding: 9px 11px;
+    font-size: 13px;
+    background: rgba(249, 250, 251, 0.8);
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+.form-input:focus {
+    border-color: #6366f1;
+    background: #ffffff;
+    box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.35);
+}
+.form-textarea {
+    resize: vertical;
+    min-height: 96px;
+}
+.form-hint {
+    font-size: 11px;
+    color: #6b7280;
+}
+.form-footer {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.form-policy {
+    font-size: 11px;
+    color: #6b7280;
+}
+.form-policy a {
+    color: #4f46e5;
+}
+.modal-success-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    background: radial-gradient(circle at 20% 20%, #4ade80, #16a34a);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f9fafb;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+.modal-success-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #0f172a;
+}
+.modal-success-text {
+    font-size: 13px;
+    color: #4b5563;
+    margin-bottom: 14px;
+}
+.modal-success-meta {
+    font-size: 11px;
+    color: #6b7280;
+}
+.modal-success-meta strong {
+    color: #111827;
+}
+@media (max-width: 960px) {
+    .hero {
+        grid-template-columns: minmax(0, 1fr);
+        padding: 16px 24px 30px 24px;
+    }
+    .hero-left {
+        padding-right: 0;
+    }
+    .hero-right {
+        margin-top: 16px;
+    }
+    .section {
+        padding: 30px 24px 8px 24px;
+    }
+    .footer {
+        padding: 20px 24px 24px 24px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+@media (max-width: 768px) {
+    .header {
+        padding: 18px 20px 4px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .nav {
+        flex-wrap: wrap;
+        gap: 14px;
+        font-size: 13px;
+    }
+    .header-cta {
+        align-self: stretch;
+        justify-content: space-between;
+    }
+    .services-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+    .benefits-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+    .about-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+    .process-steps {
+        grid-template-columns: minmax(0, 1fr);
+    }
+    .process-arrow {
+        display: none;
+    }
+    .hero-floating-card {
+        left: 10px;
+    }
+    .hero-tour-card {
+        right: 10px;
+    }
+    .contact-banner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .contact-banner-side {
+        align-items: flex-start;
+    }
+    .contact-banner-note {
+        text-align: left;
+    }
+}
+</style>
+</head>
+<body>
+<div class="wrapper">
+<div class="main-shell" id="inicio">
+<header class="header">
+<div class="logo-area">
+<div class="logo-mark">DU</div>
+<div>
+<div class="logo-text-main">DESIGN URBANO S.R.L.</div>
+<div class="logo-text-sub">Arquitectura y construcción residencial</div>
+</div>
+</div>
+<nav class="nav">
+<a href="#inicio">Inicio</a>
+<a href="#estudio">Estudio</a>
+<a href="#servicios">Soluciones</a>
+<a href="#ventajas">Por qué nosotros</a>
+<a href="#proceso">Proceso</a>
+<a href="#contacto">Contacto</a>
+</nav>
+<div class="header-cta">
+<div class="header-toggle">
+<div class="toggle-dot"></div>
+<div class="toggle-label">Edificios activos 24/7</div>
+</div>
+<button class="btn btn-primary" id="openContactHeader">Agenda una consulta</button>
+</div>
+</header>
+<section class="hero">
+<div class="hero-left">
+<div class="hero-kicker">
+<div class="hero-kicker-dot"></div>
+<span>Residencial de alta precisión urbana</span>
+</div>
+<h1 class="hero-title">Vivienda vertical pensada para la vida porteña.</h1>
+<p class="hero-subtitle">
+DESIGN URBANO S.R.L. desarrolla edificios residenciales en Ciudad de Buenos Aires que integran diseño arquitectónico contemporáneo, sistemas inteligentes y criterios de eficiencia energética, para que cada m² trabaje a favor de quienes habitan la ciudad.
+</p>
+<div class="hero-meta">
+<div class="hero-stat">
+<div class="hero-stat-number">+24K</div>
+<div class="hero-stat-label">m² residenciales entregados</div>
+</div>
+<div class="hero-stat">
+<div class="hero-stat-number">12</div>
+<div class="hero-stat-label">torres habitadas en la ciudad</div>
+</div>
+<div class="hero-chip">
+<div class="hero-chip-avatar"></div>
+<div>
+<div class="hero-chip-text-main">Auditoría de proyecto sin costo</div>
+<div class="hero-chip-text-sub">Análisis técnico de tu lote en 72 h</div>
+</div>
+</div>
+</div>
+<div class="hero-actions">
+<button class="btn btn-primary" id="openContactHero">Explorar tu terreno</button>
+<button class="btn btn-outline" onclick="document.getElementById('servicios').scrollIntoView({behavior:'smooth'})">Ver servicios</button>
+</div>
+<p class="hero-tagline">
+Nos especializamos en edificios de escala media, entre 1500 y 6500 m², optimizados para alquiler, venta o renta temporal bajo normativa local.
+</p>
+</div>
+<div class="hero-right">
+<div class="hero-building-card">
+<div class="hero-building-photo"></div>
+<div class="hero-building-overlay"></div>
+<div class="hero-building-label">
+<span class="hero-building-label-title">Olazábal Residencial 2810</span>
+<span>Tipologías flexibles, balcones vivibles, terrazas verdes activas.</span>
+</div>
+</div>
+<div class="hero-floating-card">
+<div class="hero-floating-header">
+<div class="hero-floating-name">Clima interior</div>
+<div class="hero-floating-badge">Consumo optimizado</div>
+</div>
+<div class="hero-floating-gauge">
+<div class="hero-floating-gauge-track">
+<div class="hero-floating-gauge-fill"></div>
+</div>
+<div class="hero-floating-gauge-text">
+<span>Uso de energía</span>
+<span>−22 %</span>
+</div>
+</div>
+<div class="hero-floating-row">
+<div class="hero-floating-label">Luz natural en unidades</div>
+<div class="hero-floating-value">+18 %</div>
+</div>
+<div class="hero-floating-row">
+<div class="hero-floating-label">Ruido exterior filtrado</div>
+<div class="hero-floating-value">−32 dB</div>
+</div>
+</div>
+<div class="hero-tour-card">
+<div class="hero-tour-user">
+<div class="hero-tour-avatar"></div>
+<div class="hero-tour-info">
+<span class="hero-tour-name">Recorrido virtual</span>
+<span class="hero-tour-role">Simulamos vistas, luz y circulación antes de construir.</span>
+</div>
+</div>
+<div class="hero-tour-actions">
+<div class="hero-tour-icon-row">
+<div class="hero-tour-icon">3D</div>
+<div class="hero-tour-icon">AR</div>
+<div class="hero-tour-icon">BIM</div>
+</div>
+<div class="hero-tour-cta">Ver demo de edificio</div>
+</div>
+</div>
+</div>
+</section>
+<section class="section" id="estudio">
+<div class="section-inner">
+<div class="section-header">
+<div>
+<div class="section-kicker">Quién diseña tus metros cuadrados</div>
+<h2 class="section-title">Estudio que vive la ciudad que construye.</h2>
+</div>
+<p class="section-description">
+Desde nuestro estudio en OLAZABAL 2810 1428 Ciudad de Buenos Aires acompañamos el ciclo completo de un edificio residencial, del anteproyecto a la post-ocupación.
+</p>
+</div>
+<div class="section-body">
+<div class="about-grid">
+<div>
+<p class="about-text">
+En DESIGN URBANO S.R.L. trabajamos para que cada edificio sea una pieza precisa dentro del tejido urbano porteño. Combinamos metodologías BIM con análisis de asoleamiento, ventilación cruzada y acústica para optimizar cada unidad residencial según su orientación real. Nuestro equipo integra arquitectos, ingenieros y especialistas en domótica para proponer soluciones donde la estética no compite con la performance técnica.
+</p>
+<p class="about-text">
+Diseñamos especialmente para inversores y desarrolladores que buscan proyectos claros, medibles y fáciles de operar una vez entregados. Por eso documentamos cada decisión relevante, desde la elección de carpinterías hasta la estrategia de impermeabilización de terrazas, y la vinculamos a costos reales en pesos argentinos actualizados. Además, acompañamos la relación con consorcios y administraciones para que la transición de obra a uso cotidiano sea ordenada y simple.
+</p>
+<div class="about-highlight">
+<div class="about-highlight-item">
+<div class="about-highlight-label">Edificios residenciales completados</div>
+<div class="about-highlight-value">+18</div>
+<div class="about-highlight-text">
+Entre Núñez, Belgrano, Palermo y barrios emergentes, con foco en densificación controlada y amenities realmente utilizables.
+</div>
+</div>
+<div class="about-highlight-item">
+<div class="about-highlight-label">Tiempo medio de obra</div>
+<div class="about-highlight-value">22 meses</div>
+<div class="about-highlight-text">
+Cronogramas realistas, seguimiento semanal y panel digital compartido con el cliente para visualizar avances y desvíos en tiempo real.
+</div>
+</div>
+</div>
+</div>
+<div>
+<div class="about-diagram">
+<div class="diagram-title">Métrica de confort en edificios residenciales DU.</div>
+<div class="diagram-sub">Leemos datos de edificios ya habitados para mejorar cada nuevo proyecto.</div>
+<div class="diagram-row">
+<div class="diagram-item">
+<div class="diagram-label">
+<div class="diagram-dot diagram-dot-a"></div>
+<span>Confort térmico sin uso intensivo de equipos</span>
+</div>
+<div class="diagram-bar">
+<div class="diagram-bar-fill-a"></div>
+</div>
+<span>86 %</span>
+</div>
+<div class="diagram-item">
+<div class="diagram-label">
+<div class="diagram-dot diagram-dot-b"></div>
+<span>Flexibilidad de planta a lo largo de la vida útil</span>
+</div>
+<div class="diagram-bar">
+<div class="diagram-bar-fill-b"></div>
+</div>
+<span>72 %</span>
+</div>
+<div class="diagram-item">
+<div class="diagram-label">
+<div class="diagram-dot diagram-dot-c"></div>
+<span>Interacciones eficientes con el entorno urbano</span>
+</div>
+<div class="diagram-bar">
+<div class="diagram-bar-fill-c"></div>
+</div>
+<span>64 %</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="section" id="servicios">
+<div class="section-inner">
+<div class="section-header">
+<div>
+<div class="section-kicker">Qué podemos construir juntos</div>
+<h2 class="section-title">Servicios pensados para edificios reales, no maquetas.</h2>
+</div>
+<p class="section-description">
+Integramos diseño, normativa y operación en tres líneas de servicio que se adaptan a desarrolladores, inversores y usuarios finales que desean consolidar patrimonio en Buenos Aires.
+</p>
+</div>
+<div class="section-body">
+<div class="services-grid">
+<div class="service-card">
+<div class="service-icon">🏗️</div>
+<h3 class="service-title">Desarrollo integral de edificio residencial</h3>
+<p class="service-text">
+Tomamos el proyecto desde la evaluación del lote hasta la entrega de las unidades habitadas, coordinando estudios de suelo, proyecto ejecutivo, cronograma de obra y documentación para el GCBA. Cada decisión técnica se traduce en un cuadro económico que permite entender cómo se construye el valor por metro cuadrado. Esto reduce cambios improvisados durante la obra y asegura un producto final coherente con el plan de negocio original.
+</p>
+<div class="service-tag">Llave en mano pensado para la ciudad</div>
+</div>
+<div class="service-card">
+<div class="service-icon">🌱</div>
+<h3 class="service-title">Reconversiones y ampliaciones de edificios existentes</h3>
+<p class="service-text">
+Diseñamos intervenciones sobre estructuras ya construidas para ganar superficie útil, incorporar unidades nuevas o mejorar el confort de las existentes. Analizamos la estructura, instalaciones y normativa vigente para proponer operaciones quirúrgicas: ampliación de balcones, terrazas verdes activas, núcleos húmedos reorganizados y patios que vuelven a respirar. El resultado suele ser un edificio con nueva vida y una curva de mantenimiento más predecible.
+</p>
+<div class="service-tag">Capitalizar lo que ya existe</div>
+</div>
+<div class="service-card">
+<div class="service-icon">📊</div>
+<h3 class="service-title">Consultoría en diseño, normativa y performance</h3>
+<p class="service-text">
+Acompañamos equipos y desarrolladores que ya cuentan con proyecto, pero buscan asegurar su viabilidad antes de avanzar a obra. Revisamos la propuesta frente al Código de Edificación, evaluamos asoleamiento y ventilación y detectamos puntos de conflicto que podrían convertirse en reclamos futuros. Entregamos un informe claro, con ajustes sugeridos y un mapa de decisiones que prioriza lo que más impacto tiene en confort, costos y tiempos.
+</p>
+<div class="service-tag">Mirada crítica antes de invertir</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="section" id="ventajas">
+<div class="section-inner">
+<div class="section-header">
+<div>
+<div class="section-kicker">Razones para subir al próximo piso</div>
+<h2 class="section-title">Ventajas concretas de construir con DESIGN URBANO.</h2>
+</div>
+<p class="section-description">
+Nuestra forma de trabajar se apoya en datos de edificios ya habitados, herramientas digitales y una escucha cercana a los modos reales de habitar en Buenos Aires.
+</p>
+</div>
+<div class="section-body">
+<div class="benefits-grid">
+<div class="benefit-card">
+<h3 class="benefit-title">Un único equipo, muchas disciplinas conectadas</h3>
+<p class="benefit-text">
+Arquitectos, ingenieros estructurales, especialistas en instalaciones y consultores en domótica trabajan dentro del mismo ecosistema de información. Esto acorta tiempos de respuesta, evita superposiciones de planos y reduce la cantidad de decisiones que el cliente debe tomar en soledad. El resultado es un proceso más liviano para el desarrollador y equipos de obra que reciben documentación coherente y actualizada.
+</p>
+</div>
+<div class="benefit-card">
+<h3 class="benefit-title">Transparencia en costos y decisiones técnicas</h3>
+<p class="benefit-text">
+Cada variante de diseño se compara en un panel que muestra impacto en costos, tiempo de obra y experiencia del usuario final. Si cambiamos el tipo de carpintería o la disposición de un núcleo húmedo, se ve inmediatamente cómo afecta el presupuesto y la operación. De esta forma, el cliente decide con información clara, sin sorpresas en certificaciones ni ajustes de último momento.
+</p>
+</div>
+<div class="benefit-card">
+<h3 class="benefit-title">Edificios preparados para operar desde el primer día</h3>
+<p class="benefit-text">
+Pensamos desde el inicio cómo será la vida cotidiana del edificio: circulación de servicios, limpieza, mantenimiento de fachadas y gestión de residuos. Diseñamos espacios técnicos accesibles, salas de servicios legibles y manuales visuales para consorcios y administradores. Así, la operación diaria se simplifica, disminuyen reclamos y se preserva la calidad inicial de los espacios a lo largo del tiempo.
+</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="section" id="proceso">
+<div class="section-inner">
+<div class="section-header">
+<div>
+<div class="section-kicker">Cómo llegamos del terreno al edificio habitado</div>
+<h2 class="section-title">Proceso de trabajo en tres etapas claras.</h2>
+</div>
+<p class="section-description">
+Cada paso tiene entregables concretos, instancias de decisión y herramientas digitales para seguir la evolución del proyecto sin perderse en el detalle técnico.
+</p>
+</div>
+<div class="section-body">
+<div class="process-wrapper">
+<div class="process-steps">
+<div class="process-step">
+<div class="process-pill">
+<div class="process-number">1</div>
+<div class="process-name">Explorar el potencial del lote</div>
+</div>
+<h3 class="process-title">Análisis urbano, normativo y de negocio.</h3>
+<p class="process-text">
+Leemos el entorno inmediato, el Código Urbanístico y las condiciones físicas del terreno para definir qué edificio tiene sentido construir allí. Entregamos escenarios posibles con superficies, tipologías, amenities y un primer orden de inversión, de modo que el cliente pueda validar la operación antes de avanzar a proyecto ejecutivo.
+</p>
+<div class="process-arrow"></div>
+</div>
+<div class="process-step">
+<div class="process-pill">
+<div class="process-number">2</div>
+<div class="process-name">Diseñar y documentar el edificio</div>
+</div>
+<h3 class="process-title">Proyecto ejecutivo completamente coordinado.</h3>
+<p class="process-text">
+Desarrollamos el edificio en entorno BIM, donde estructura, arquitectura e instalaciones conviven en un mismo modelo. Desde allí generamos planos, cómputos y detalles constructivos que se actualizan ante cada cambio. Esto permite licitar con información sólida, reducir conflictos en obra y mantener alineados a todos los proveedores involucrados.
+</p>
+<div class="process-arrow"></div>
+</div>
+<div class="process-step">
+<div class="process-pill">
+<div class="process-number">3</div>
+<div class="process-name">Construir, entregar y aprender</div>
+</div>
+<h3 class="process-title">Obra acompañada y feedback de usuarios.</h3>
+<p class="process-text">
+Durante la obra visitamos el sitio con frecuencia, validamos puntos críticos y registramos decisiones en un tablero compartido. Una vez entregadas las unidades, recopilamos datos de uso y percepción de los habitantes para entender qué funcionó mejor. Esa información vuelve al estudio para elevar el estándar de los siguientes proyectos residenciales.
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="section" id="contacto">
+<div class="section-inner">
+<div class="section-header">
+<div>
+<div class="section-kicker">Hablemos de tu próximo edificio</div>
+<h2 class="section-title">Un formulario breve para empezar una conversación larga.</h2>
+</div>
+<p class="section-description">
+No pedimos decisiones definitivas, solo contexto. Con pocos datos podemos analizar tu caso y responder con escenarios concretos para que evalúes con calma.
+</p>
+</div>
+<div class="section-body">
+<div class="contact-banner">
+<div class="contact-banner-main">
+<div class="contact-banner-title">Contanos dónde querés construir y qué buscás lograr.</div>
+<p class="contact-banner-text">
+Podemos revisar el potencial de tu lote, unificar la visión de los socios o auditar un proyecto que ya está en marcha. Cuanto más preciso seas al describir tu idea, más útil será nuestra primera devolución técnica.
+</p>
+<div class="contact-banner-pills">
+<div class="contact-pill">Ideal para proyectos entre 1500 y 6500 m²</div>
+<div class="contact-pill">Respuestas en un máximo de 3 días hábiles</div>
+<div class="contact-pill">Sin compromiso de contratación</div>
+</div>
+</div>
+<div class="contact-banner-side">
+<button class="btn btn-primary" id="openContactSection">Abrir formulario de contacto</button>
+<p class="contact-banner-note">
+Podés compartirnos dirección del lote, tipo de inversión, plazos deseados y cualquier información relevante que ya tengas disponible.
+</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<footer class="footer">
+<div>
+<span>© </span>
+<span><strong>DESIGN URBANO S.R.L.</strong> · Construcción residencial enfocada en Buenos Aires.</span>
+</div>
+<div class="footer-links">
+<span>Estudio con base en OLAZABAL 2810 1428 Ciudad de Buenos Aires.</span>
+<span>Escribinos a <strong>info@designurbano.pro</strong> para coordinar una reunión.</span>
+</div>
+</footer>
+</div>
+</div>
+<div class="modal-backdrop" id="contactModalBackdrop">
+<div class="modal">
+<div class="modal-header">
+<div>
+<h3 class="modal-title">Contanos sobre tu proyecto residencial.</h3>
+<p class="modal-subtitle">
+Completá el formulario y te respondemos con una primera mirada técnica sobre el potencial de tu edificio en Buenos Aires.
+</p>
+</div>
+<button class="modal-close" type="button" id="contactModalClose">×</button>
+</div>
+<div class="modal-content">
+<form id="contactForm">
+<div class="form-grid">
+<div class="form-field">
+<label class="form-label" for="nombre">Nombre completo</label>
+<input class="form-input" id="nombre" name="nombre" type="text" required placeholder="¿Cómo te llamás?">
+</div>
+<div class="form-field">
+<label class="form-label" for="email">Correo electrónico</label>
+<input class="form-input" id="email" name="email" type="email" required placeholder="tuemail@ejemplo.com">
+</div>
+<div class="form-field">
+<label class="form-label" for="ubicacion">Ubicación del proyecto</label>
+<input class="form-input" id="ubicacion" name="ubicacion" type="text" placeholder="Barrio o dirección aproximada en CABA o alrededores">
+</div>
+<div class="form-field">
+<label class="form-label" for="objetivo">Objetivo principal</label>
+<input class="form-input" id="objetivo" name="objetivo" type="text" placeholder="Venta, renta, renta temporal, primera vivienda, etc.">
+</div>
+<div class="form-field">
+<label class="form-label" for="mensaje">Contanos un poco más</label>
+<textarea class="form-input form-textarea" id="mensaje" name="mensaje" required placeholder="Contanos en qué etapa está tu idea, qué superficie imaginás y cuándo te gustaría comenzar."></textarea>
+<div class="form-hint">
+Cuanto más contexto brindes, mejor podremos prepararnos para la primera reunión.
+</div>
+</div>
+</div>
+<div class="form-footer">
+<button class="btn btn-primary" type="submit">Enviar mensaje al estudio</button>
+<p class="form-policy">
+Al enviar este formulario aceptás que te contactemos por correo electrónico desde <strong>info@designurbano.pro</strong>. La información será utilizada solo para responder a tu consulta.
+</p>
+</div>
+</form>
+</div>
+</div>
+</div>
+<div class="modal-backdrop" id="successModalBackdrop">
+<div class="modal">
+<div class="modal-header">
+<div class="modal-success-icon">✓</div>
+<button class="modal-close" type="button" id="successModalClose">×</button>
+</div>
+<div class="modal-content">
+<h3 class="modal-success-title">Tu mensaje llegó a DESIGN URBANO.</h3>
+<p class="modal-success-text">
+Gracias por contarnos sobre tu proyecto. Nuestro equipo va a leer la información con calma y te va a responder a la brevedad con una primera devolución técnica y posibles próximos pasos.
+</p>
+<p class="modal-success-meta">
+Guardá este dato de referencia: responderemos desde <strong>info@designurbano.pro</strong> y podremos coordinar una reunión en nuestro estudio de OLAZABAL 2810 1428 Ciudad de Buenos Aires o de manera remota.
+</p>
+<div class="form-footer">
+<button class="btn btn-primary" type="button" id="successModalOk">Volver al sitio</button>
+</div>
+</div>
+</div>
+</div>
+<script>
+const contactModalBackdrop = document.getElementById("contactModalBackdrop");
+const successModalBackdrop = document.getElementById("successModalBackdrop");
+const openContactHeader = document.getElementById("openContactHeader");
+const openContactHero = document.getElementById("openContactHero");
+const openContactSection = document.getElementById("openContactSection");
+const contactModalClose = document.getElementById("contactModalClose");
+const successModalClose = document.getElementById("successModalClose");
+const successModalOk = document.getElementById("successModalOk");
+const contactForm = document.getElementById("contactForm");
+function openContactModal() {
+    contactModalBackdrop.classList.add("active");
+}
+function closeContactModal() {
+    contactModalBackdrop.classList.remove("active");
+}
+function openSuccessModal() {
+    successModalBackdrop.classList.add("active");
+}
+function closeSuccessModal() {
+    successModalBackdrop.classList.remove("active");
+}
+if (openContactHeader) {
+    openContactHeader.addEventListener("click", openContactModal);
+}
+if (openContactHero) {
+    openContactHero.addEventListener("click", openContactModal);
+}
+if (openContactSection) {
+    openContactSection.addEventListener("click", openContactModal);
+}
+if (contactModalClose) {
+    contactModalClose.addEventListener("click", closeContactModal);
+}
+if (successModalClose) {
+    successModalClose.addEventListener("click", closeSuccessModal);
+}
+if (successModalOk) {
+    successModalOk.addEventListener("click", closeSuccessModal);
+}
+if (contactModalBackdrop) {
+    contactModalBackdrop.addEventListener("click", function (event) {
+        if (event.target === contactModalBackdrop) {
+            closeContactModal();
+        }
+    });
+}
+if (successModalBackdrop) {
+    successModalBackdrop.addEventListener("click", function (event) {
+        if (event.target === successModalBackdrop) {
+            closeSuccessModal();
+        }
+    });
+}
+if (contactForm) {
+    contactForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+        closeContactModal();
+        contactForm.reset();
+        openSuccessModal();
+    });
+}
+document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") {
+        closeContactModal();
+        closeSuccessModal();
+    }
+});
+</script>
+</body>
+</html>
